@@ -11,6 +11,13 @@ void handlePerc(workingData *wd)
 		{'\0', NULL}};
 	int i = 0;
 
+
+	if (wd->inputStr[*wd->inputPosition] == '%' && wd->inputStr[*wd->inputPosition + 1] == '%') 
+	{
+		handleEscPerc(wd);
+		return;
+	}
+	
 	while (wd->inputStr[*wd->inputPosition])
 	{
 		i = 0;
@@ -26,7 +33,5 @@ void handlePerc(workingData *wd)
 		}
 		(*wd->inputPosition)++;
 	}
-	if (wd->inputStr[*wd->inputPosition] == '%')
-		handleEscPerc(wd);
 	/*pending logic for when there is no match for %x*/
 }

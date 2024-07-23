@@ -7,4 +7,5 @@
 void handleEscPerc(workingData *wd)
 {
 	wd->outputStr[(*wd->outputPosition)++] = '%';
+	(*wd->inputPosition) += 1;
 }

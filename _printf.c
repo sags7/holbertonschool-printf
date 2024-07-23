@@ -45,7 +45,7 @@ int _printf(const char *format, ...)
 			break;
 		}
 	}
-	finishedStr[i] = '\0';
+	finishedStr[i - 1] = '\0';
 	i = 0;
 	while (finishedStr[i])
 		_putchar(finishedStr[i++]);

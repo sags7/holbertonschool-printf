@@ -13,5 +13,7 @@ int main(void)
 	len1 = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
 	printf("MyLen: %d\nTheirs: %d\n", len1, len2);
+	_printf("%s", "This sentence is retrieved from va_args!\n");
+	printf("%s", "This sentence is retrieved from va_args!\n");
 	return (0);
 }

@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	workingData dataContainer;
 
 	va_start(arguments, format);
-	finishedStr = malloc(1024);
+	finishedStr = malloc(2024 * sizeof(char));
 	if (!finishedStr)
 		return (-1);
 	dataContainer.inputStr = format;
@@ -45,7 +45,7 @@ int _printf(const char *format, ...)
 			break;
 		}
 	}
-	finishedStr[i] = '\0';
+	finishedStr[o] = '\0';
 	i = 0;
 	while (finishedStr[i])
 		_putchar(finishedStr[i++]);

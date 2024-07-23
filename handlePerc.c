@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * handlePerc - handles formatted inputs with %
  * @wd: the struct with the necessary data to format string
@@ -18,7 +19,7 @@ void handlePerc(workingData *wd)
 			if (wd->inputStr[*wd->inputPosition] == dtypes[i].format
 				&& dtypes[i].format != '\0')
 			{
-				dtypes[i].handler(wd, NULL);
+				dtypes[i].handler(wd);
 				return;
 			}
 			i++;
@@ -26,6 +27,6 @@ void handlePerc(workingData *wd)
 		(*wd->inputPosition)++;
 	}
 	if (wd->inputStr[*wd->inputPosition] == '%')
-		handleEscPerc(wd, NULL);
+		handleEscPerc(wd);
 	/*pending logic for when there is no match for %x*/
 }

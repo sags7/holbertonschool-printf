@@ -17,13 +17,17 @@ int _printf(const char *format, ...)
 	char *finishedStr = NULL;
 	int retval = 0;
 	va_list arguments;
-	workingData dataContainer = {format, &i,  NULL, &o, &arguments};
+	workingData dataContainer;
 
 	va_start(arguments, format);
 	finishedStr = malloc(1024);
 	if (!finishedStr)
 		return (-1);
+	dataContainer.inputStr = format;
+	dataContainer.inputPosition = &i;
 	dataContainer.outputStr = finishedStr;
+	dataContainer.outputPosition = &o;
+	dataContainer.args = &arguments;
 
 	while (format[i])
 	{

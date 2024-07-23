@@ -1,3 +1,4 @@
+#include <unistd.h>
 /**
  * _putchar - prints a char to stdout
  * @c: the char to output

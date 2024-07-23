@@ -1,13 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
-
-void _putchar(char c);
-
-int _printf(const char *format, ...);
-void handleChar(workingData *wd, char *flags);
-void handleStr(workingData *wd, char *flags);
-void handleEscPerc(workingData *wd, char *flags);
-void handlePerc(workingData *wd);
+#include <stdarg.h>
+#include <stdlib.h>
 
 /**
  * struct workData - a struct that contains the needed data to work
@@ -27,6 +21,7 @@ typedef struct workData
 	char *outputStr;
 	int *outputPosition;
 	va_list *args;
+	int *flags;
 } workingData;
 
 /**
@@ -41,7 +36,14 @@ typedef struct workData
 typedef struct form
 {
 	char format;
-	void (*handler)(workingData *wd, char *flags);
+	void (*handler)(workingData *wd);
 } format;
+
+void _putchar(char c);
+int _printf(const char *format, ...);
+void handleChar(workingData *wd);
+void handleStr(workingData *wd);
+void handleEscPerc(workingData *wd);
+void handlePerc(workingData *wd);
 
 #endif

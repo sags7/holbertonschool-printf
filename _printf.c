@@ -45,11 +45,10 @@ int _printf(const char *format, ...)
 			break;
 		}
 	}
-	finishedStr[i - 1] = '\0';
+	finishedStr[i] = '\0';
 	i = 0;
 	while (finishedStr[i])
 		_putchar(finishedStr[i++]);
-	_putchar('\n');
 	retval = i;
 	va_end(arguments);
 	free(finishedStr);

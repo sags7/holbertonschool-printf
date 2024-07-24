@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 		switch (format[i])
 		{
 		/**
-		*case '\\':	 unimplemented 
+		*case '\\':	 unimplemented
 		*	i++;
 		*	break;
 		*/
@@ -50,7 +50,6 @@ int _printf(const char *format, ...)
 	i = 0;
 	while (finishedStr[i])
 		_putchar(finishedStr[i++]);
-		
 	va_end(arguments);
 	free(finishedStr);
 	return (o);

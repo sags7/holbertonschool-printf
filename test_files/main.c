@@ -15,7 +15,7 @@ int main(void)
 	printf("MyLen: %d\nTheirs: %d\n", len1, len2);
 	_printf("%s", "This sentence is retrieved from va_args!\n");
 	printf("%s", "This sentence is retrieved from va_args!\n");
-	_printf("%%abcd%%%");
-	printf("%%abcd%%%");
+	printf("MyLen: %d\n", _printf("%%\n"));
+	printf("Theirs: %d\n", printf("%%\n"));
 	return (0);
 }

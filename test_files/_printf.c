@@ -33,8 +33,8 @@ int _printf(const char *format, ...)
 	{
 		switch (format[i])
 		{
-		case '\\':
-			/* unimplemented i++*/
+		case '\\':	/* unimplemented */
+			i++;
 			break;
 		case '%':
 			handlePerc(&dataContainer);

@@ -50,7 +50,7 @@ int _printf(const char *format, ...)
 	while (finishedStr[i])
 		_putchar(finishedStr[i++]);
 	if (finishedStr[0] == '\0')
-		i = 1;
+		i += 2;
 	retval = i;
 	va_end(arguments);
 	free(finishedStr);

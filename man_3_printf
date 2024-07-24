@@ -1,0 +1,35 @@
+.TH _PRINTF 3 24/07/2024 v0.1
+.SH NAME
+_printf \- variadic function that prints a formatted string to stdout
+.SH SYNOPSIS
+.B _printf (const char *format, ...)
+.SH DESCRIPTION
+.B _printf is a variadic function that takes in a format string, that can contain several
+format specifiers, that can then be replaced by variables in the output string.
+for example: _printf("hello, %s", "world!"); will output 'hello world!' to stdout.
+.SH PARAMETERS
+.TP 
+.B Parameter 1
+The first parameter is always a string contained within double quotes:
+"Similar to this"
+.TP
+.B Other parameters
+_printf(), being a variadic function, can take as many parameters as the user needs.
+However, there have only been a few format specifiers implemented as of this version of _printf()
+.SH FORMAT SPECIFIERS
+.TP
+.B %s used for printing a string      --->  _printf("hi %s", str);
+.TP
+.B %c used for printing a single char --->  _printf("nice %c", char);
+.TP
+.B %d used for printing a decimal     --->  _printf("the year is %d", int);
+.TP
+.B %i used for printing a decimal     --->  _printf("I'm %d years old", int);
+.TP
+.B %% prints the % character once     ---> _printf("%%") --> outputs %
+
+.SH RETURN VALUES
+The function always returns an int corresponding to the length of the string that was sent to stdout.
+
+.SH AUTHOR
+Juan Sebastian Aramburo <juansebastianaramburo@gmail.com>

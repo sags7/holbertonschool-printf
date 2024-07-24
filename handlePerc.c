@@ -8,17 +8,18 @@ void handlePerc(workingData *wd)
 	format dtypes[] = {
 		{'s', handleStr},
 		{'c', handleChar},
-		{'d', handleDec},
+		{'d', handleDec},,
+		{'i', handleDec},
 		{'\0', NULL}};
 	int i = 0;
 
 
-	if (wd->inputStr[*wd->inputPosition] == '%' && wd->inputStr[*wd->inputPosition + 1] == '%') 
+	if (wd->inputStr[*wd->inputPosition] == '%' && wd->inputStr[*wd->inputPosition + 1] == '%')
 	{
 		handleEscPerc(wd);
 		return;
 	}
-	
+
 	while (wd->inputStr[*wd->inputPosition])
 	{
 		i = 0;

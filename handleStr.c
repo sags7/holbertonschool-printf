@@ -12,11 +12,10 @@ void handleStr(workingData *wd)
 	char *str = va_arg(*wd->args, char *);
 
 	if (!str)
-		str = "(null)";
+		_putchar('\0');
 
 	while (str[i])
 	{
 		wd->outputStr[(*wd->outputPosition)++] = str[i++];
 	}
-	_putchar('\0');
 }

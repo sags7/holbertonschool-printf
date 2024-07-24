@@ -49,6 +49,8 @@ int _printf(const char *format, ...)
 	i = 0;
 	while (finishedStr[i])
 		_putchar(finishedStr[i++]);
+	if (finishedStr[0] == '\0')
+		i++;
 	retval = i;
 	va_end(arguments);
 	free(finishedStr);

@@ -53,5 +53,5 @@ int _printf(const char *format, ...)
 	_putchar('\n');
 	va_end(arguments);
 	free(finishedStr);
-	return (o);
+	return (o - 1);
 }

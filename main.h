@@ -45,5 +45,6 @@ void handleChar(workingData *wd);
 void handleStr(workingData *wd);
 void handleEscPerc(workingData *wd);
 void handlePerc(workingData *wd);
+void handleDec(workingData *wd);
 
 #endif

@@ -8,6 +8,7 @@ void handlePerc(workingData *wd)
 	format dtypes[] = {
 		{'s', handleStr},
 		{'c', handleChar},
+		{'d', handleDec},
 		{'\0', NULL}};
 	int i = 0;
 

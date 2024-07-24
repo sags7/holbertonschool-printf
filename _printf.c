@@ -50,11 +50,8 @@ int _printf(const char *format, ...)
 	i = 0;
 	while (finishedStr[i])
 		_putchar(finishedStr[i++]);
-	
-	if (!finishedStr[i]) 
-		_putchar('\0');
-
+	_putchar('\0');
 	va_end(arguments);
 	free(finishedStr);
-	return (o - 1);
+	return (o);
 }

@@ -18,4 +18,5 @@ void handleStr(workingData *wd)
 	{
 		wd->outputStr[(*wd->outputPosition)++] = str[i++];
 	}
+	_putchar('\0');
 }

@@ -14,12 +14,12 @@ void handlePerc(workingData *wd)
 	int i = 0;
 
 
-	if (wd->inputStr[*wd->inputPosition] == '%' && wd->inputStr[*wd->inputPosition + 1] == '%')
+	if (wd->inputStr[*wd->inputPosition] == '%' && wd->inputStr[*wd->inputPosition + 1] == '%') 
 	{
 		handleEscPerc(wd);
 		return;
 	}
-
+	
 	while (wd->inputStr[*wd->inputPosition])
 	{
 		i = 0;

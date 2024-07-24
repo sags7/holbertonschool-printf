@@ -12,7 +12,7 @@ void handleStr(workingData *wd)
 	char *str = va_arg(*wd->args, char *);
 
 	if (!str)
-		_putchar('\0');
+		str = "(null)";
 
 	while (str[i])
 	{

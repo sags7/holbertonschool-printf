@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 {
 	int i = 0, o = 0;
 	char *finishedStr = NULL;
-	int retval = 0;
 	va_list arguments;
 	workingData dataContainer;
 
@@ -33,9 +32,11 @@ int _printf(const char *format, ...)
 	{
 		switch (format[i])
 		{
-		case '\\':	/* unimplemented */
-			i++;
-			break;
+		/**
+		*case '\\':	 unimplemented 
+		*	i++;
+		*	break;
+		*/
 		case '%':
 			handlePerc(&dataContainer);
 			i++;
@@ -49,10 +50,8 @@ int _printf(const char *format, ...)
 	i = 0;
 	while (finishedStr[i])
 		_putchar(finishedStr[i++]);
-	if (finishedStr[0] == '\0')
-		i += 2;
-	retval = i;
+		
 	va_end(arguments);
 	free(finishedStr);
-	return (retval);
+	return (o);
 }

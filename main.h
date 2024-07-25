@@ -11,7 +11,7 @@
  * @outputStr: the processed string at any given time
  * @outputPosition: the position in the output string
  * @args: the va_list pointer
- *
+ * @flags: any aditional formatting flags
  * Description: a struct that contains the needed data to work on _printf
  */
 typedef struct workData
@@ -36,15 +36,15 @@ typedef struct workData
 typedef struct form
 {
 	char format;
-	void (*handler)(workingData *wd);
+	int (*handler)(workingData *wd);
 } format;
 
 void _putchar(char c);
 int _printf(const char *format, ...);
-void handleChar(workingData *wd);
-void handleStr(workingData *wd);
-void handleEscPerc(workingData *wd);
-void handlePerc(workingData *wd);
-void handleDec(workingData *wd);
+int handleChar(workingData *wd);
+int handleStr(workingData *wd);
+int handleEscPerc(workingData *wd);
+int handlePerc(workingData *wd);
+int handleDec(workingData *wd);
 
 #endif

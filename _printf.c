@@ -38,7 +38,8 @@ int _printf(const char *format, ...)
 		*	break;
 		*/
 		case '%':
-			handlePerc(&dataContainer);
+			if (handlePerc(&dataContainer) < 0)
+				return (-1);
 			i++;
 			break;
 		default:

@@ -3,8 +3,9 @@
 /**
  * handleDec - handles decimal values for _printf()
  * @wd: the struct containing the needed data
+ * Return: 0 if successful or -n if not
  */
-void handleDec(workingData *wd)
+int handleDec(workingData * wd)
 {
 	unsigned int n, orig, mag = 1, i = 0;
 	int m = va_arg(*wd->args, int);
@@ -22,12 +23,11 @@ void handleDec(workingData *wd)
 		n /= 10;
 		mag *= 10;
 	}
-
 	for (; i > 0; i--)
 	{
 		wd->outputStr[(*wd->outputPosition)++] = '0' + ((orig / mag) % 10);
 		mag /= 10;
 	}
-
 	wd->outputStr[(*wd->outputPosition)++] = '0' + (orig % 10);
+	return (0);
 }

@@ -3,7 +3,7 @@
  * handlePerc - handles formatted inputs with %
  * @wd: the struct with the necessary data to format string
  */
-void handlePerc(workingData *wd)
+int handlePerc(workingData *wd)
 {
 	format dtypes[] = {
 		{'s', handleStr},
@@ -18,10 +18,10 @@ void handlePerc(workingData *wd)
 		if (wd->inputStr[*wd->inputPosition + 1] == '%')
 		{
 			handleEscPerc(wd);
-			return;
+			return (0);
 		}
 		else if (!(wd->inputStr[*wd->inputPosition + 1]))
-			return;
+			return (0);
 	}
 	
 	while (wd->inputStr[*wd->inputPosition])
@@ -33,11 +33,12 @@ void handlePerc(workingData *wd)
 				&& dtypes[i].format != '\0')
 			{
 				dtypes[i].handler(wd);
-				return;
+				return (0);
 			}
 			i++;
 		}
 		(*wd->inputPosition)++;
 	}
+	return (0);
 	/*pending logic for when there is no match for %x*/
 }

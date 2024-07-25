@@ -1,5 +1,9 @@
 #include "main.h"
-/* int (*)(workingData *wd) */
+/**
+ * getHandler - helper func that gets the correct handler function
+ * @wd: the struct with the neccesary data * to process _printf()
+ * Return: a pointer to the correct handler function
+ */
 int (*getHandler(workingData *wd))(workingData *wd)
 {
 	format dtypes[] = {
@@ -19,9 +23,7 @@ int (*getHandler(workingData *wd))(workingData *wd)
 			return (NULL);
 	}
 	
-	while (wd->inputStr[*wd->inputPosition])
-	{
-		i = 0;
+	++(*wd->inputPosition);
 		while (dtypes[i].format)
 		{
 			if (wd->inputStr[*wd->inputPosition] == dtypes[i].format
@@ -31,8 +33,6 @@ int (*getHandler(workingData *wd))(workingData *wd)
 			}
 			i++;
 		}
-		(*wd->inputPosition)++;
-	}
 	return (NULL);
 }
 
@@ -45,9 +45,10 @@ int handlePerc(workingData *wd)
 {
 	int (*handler)(workingData *wd) = getHandler(wd);
 	
-	if (handler(wd) < 0 )
+	if (handler && handler(wd) < 0 )
 		return(-1);
-		
+	if (!handler)
+		handleNoMatch(wd);
 	return (0);
 	/*pending logic for when there is no match for %x*/
 }

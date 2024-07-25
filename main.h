@@ -46,5 +46,6 @@ int handleStr(workingData *wd);
 int handleEscPerc(workingData *wd);
 int handlePerc(workingData *wd);
 int handleDec(workingData *wd);
+int handleNoMatch(workingData *wd);
 
 #endif

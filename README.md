@@ -41,7 +41,6 @@
 ## Usage
 
 ```c
-import foobar
 
 # standard out: 'Hello World!'
 _printf("Hello %s", "World!");
@@ -68,6 +67,10 @@ The function always returns an int corresponding to the length of the string tha
 ### AUTHOR
 
 Juan Sebastian Aramburo <juansebastianaramburo@gmail.com>
+
+## Installation of man page
+
+Download all of the .c files from the repo and #include them in your C project.
 
 ## Installation of man page
 

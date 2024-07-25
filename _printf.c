@@ -47,9 +47,8 @@ int _printf(const char *format, ...)
 		}
 	}
 	finishedStr[o] = '\0';
-	i = 0;
-	while (finishedStr[i])
-		_putchar(finishedStr[i++]);
+	for (i = 0; i < o; i++)
+		_putchar(finishedStr[i]);
 	va_end(arguments);
 	free(finishedStr);
 	return (o);

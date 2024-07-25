@@ -14,7 +14,6 @@ int (*getHandler(workingData * wd))(workingData * wd)
 		{'\0', NULL}};
 	int i = 0;
 
-
 	if (wd->inputStr[*wd->inputPosition] == '%')
 	{
 		if (wd->inputStr[*wd->inputPosition + 1] == '%')
@@ -22,17 +21,14 @@ int (*getHandler(workingData * wd))(workingData * wd)
 		else if (!(wd->inputStr[*wd->inputPosition + 1]))
 			return (NULL);
 	}
-
 	++(*wd->inputPosition);
-		while (dtypes[i].format)
-		{
-			if (wd->inputStr[*wd->inputPosition] == dtypes[i].format
-				&& dtypes[i].format != '\0')
-			{
-				return (dtypes[i].handler);
-			}
-			i++;
-		}
+	while (dtypes[i].format)
+	{
+		if (wd->inputStr[*wd->inputPosition] == dtypes[i].format
+			&& dtypes[i].format != '\0')
+			return (dtypes[i].handler);
+		i++;
+	}
 	return (NULL);
 }
 

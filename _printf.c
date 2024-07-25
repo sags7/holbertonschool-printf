@@ -48,8 +48,7 @@ int _printf(const char *format, ...)
 		}
 	}
 	finishedStr[o] = '\0';
-	for (i = 0; i < o; i++)
-		_putchar(finishedStr[i]);
+	write(1, finishedStr, o);
 	va_end(arguments);
 	free(finishedStr);
 	return (o);

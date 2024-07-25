@@ -7,7 +7,7 @@
  */
 int handleNoMatch(workingData *wd)
 {
-    wd->outputStr[(*wd->outputPosition)++] = '%';
-    (*wd->inputPosition)--;
-    return (0);
+	wd->outputStr[(*wd->outputPosition)++] = '%';
+	(*wd->inputPosition)--;
+	return (0);
 }

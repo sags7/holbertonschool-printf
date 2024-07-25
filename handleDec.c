@@ -5,7 +5,7 @@
  * @wd: the struct containing the needed data
  * Return: 0 if successful or -n if not
  */
-int handleDec(workingData * wd)
+int handleDec(workingData *wd)
 {
 	unsigned int n, orig, mag = 1, i = 0;
 	int m = va_arg(*wd->args, int);

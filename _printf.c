@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	workingData dataContainer;
 
 	va_start(arguments, format);
-	finishedStr = malloc(2024 * sizeof(char));
+	finishedStr = malloc(1024 * sizeof(char));
 	if (!finishedStr)
 		return (-1);
 	dataContainer.inputStr = format;

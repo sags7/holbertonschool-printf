@@ -26,6 +26,8 @@ However, there have only been a few format specifiers implemented as of this ver
 .TP
 .B %i used for printing a decimal     --->  _printf("I'm %d years old", int);
 .TP
+.B %b prints an int in binary format  --->  _printf("%b", 1024);
+.TP
 .B %% prints the % character once     ---> _printf("%%") --> outputs %
 
 .SH RETURN VALUES

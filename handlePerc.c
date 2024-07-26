@@ -11,6 +11,7 @@ int (*getHandler(workingData * wd))(workingData * wd)
 		{'c', handleChar},
 		{'d', handleDec},
 		{'i', handleDec},
+		{'b', handleBin},
 		{'\0', NULL}};
 	int i = 0;
 
@@ -46,5 +47,4 @@ int handlePerc(workingData *wd)
 	if (!handler)
 		handleNoMatch(wd);
 	return (0);
-	/*pending logic for when there is no match for %x*/
 }

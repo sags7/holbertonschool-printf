@@ -72,6 +72,11 @@ Juan Sebastian Aramburo <juansebastianaramburo@gmail.com>
 
 Download all of the .c files from the repo and #include them in your C project.
 
+compile using GCC with the following flags:
+````bash
+$ gcc -o printf_968_0 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c main.h
+````
+
 ## Installation of man page
 
 Follow these steps to install the man page for the `_printf` function from the file named `man_3_printf`:

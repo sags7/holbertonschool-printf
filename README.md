@@ -72,9 +72,24 @@ Juan Sebastian Aramburo <juansebastianaramburo@gmail.com>
 
 Download all of the .c files from the repo and #include them in your C project.
 
+NOTE: This project does not contain a main() loop, so you'll have to create your own, for example:
+
+````bash
+#include "main.h"
+
+int main(void)
+{
+  _printf("%i%% of people don't know statistics!", 99);
+  return (0);
+}
+````
 compile using GCC with the following flags:
 ````bash
-$ gcc -o printf_968_0 -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c main.h
+$ gcc -o printf_sag -Wall -Werror -Wextra -pedantic -Wno-format -std=gnu89  *.c main.h
+````
+with the command above, the executable file would be called 'printf_sag' and could be ran with:
+````bash
+$ ./printf_sag
 ````
 
 ## Installation of man page

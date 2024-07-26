@@ -38,6 +38,9 @@
 - **%%**: prints the % character once
   Example: `_printf("%%")` --> outputs %
 
+- **%b**: prints an integer in binary format
+  Example: _printf("%b", 1024));
+
 ## Usage
 
 ```c
@@ -53,6 +56,9 @@ _printf("I'm %d years old", 31);
 
 # standard out: '99% of people don't know statistics!'
 _printf("%i%% of people don't know statistics!", 99);
+
+# standard out: '10000000000'
+_printf("%b", 1024));
 
 ```
 

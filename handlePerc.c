@@ -13,6 +13,7 @@ int (*getHandler(workingData * wd))(workingData * wd)
 		{'i', handleDec},
 		{'u', handleUns},
 		{'b', handleBin},
+		{'o', handleOct},
 		{'\0', NULL}};
 	int i = 0;
 

@@ -49,5 +49,6 @@ int handleDec(workingData *wd);
 int handleNoMatch(workingData *wd);
 int handleBin(workingData *wd);
 int handleUns(workingData *wd);
+int handleOct(workingData *wd);
 
 #endif

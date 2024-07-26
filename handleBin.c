@@ -1,6 +1,8 @@
 #include "main.h"
 #include <stdarg.h>
 
+#include <stdio.h>
+
 /**
  * handleBin - handles b binary format specifier for _putchar
  * @wd: struct with pointers to data needed to process _putchar
@@ -10,14 +12,12 @@
 int handleBin(workingData *wd)
 {
 	int i, j = 0, dec = va_arg(*wd->args, int);
-	int bit = ((int)sizeof(int) * 8) - 1;
-	char bin[(sizeof(int) * 8) + 1];
+	long int bit = (sizeof(long int) * 8) - 1;
+	char bin[(sizeof(long int) * 8)];
 	unsigned int mask = 1;
 
 	for (i = 0; i <= bit; i++)
 		bin[i] = '0';
-
-	bin[bit + 1] = '\0';
 
 	for (i = 0; i <= bit; i++)
 	{
@@ -25,8 +25,15 @@ int handleBin(workingData *wd)
 		mask <<= 1;
 	}
 
-	for (; j <= bit; j++)
-		wd->outputStr[(*wd->outputPosition)++] = bin[j];
+    i = 0;
+    while(bin[i])
+    {
+        if (bin[i++] == '0')
+            j++;
+        else
+            for (; j <= bit; j++)
+		        wd->outputStr[(*wd->outputPosition)++] = bin[j];
+    }
 
 	return (0);
 }

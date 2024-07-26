@@ -11,9 +11,10 @@
 
 int handleBin(workingData *wd)
 {
-	int i, dec = va_arg(*wd->args, unsigned int);
-	long int bit = (sizeof(long int) * 8) - 1;
-	char bin[(sizeof(long int) * 8)];
+	unsigned int i;
+    unsigned int dec = va_arg(*wd->args, unsigned int);
+	unsigned int bit = (sizeof(unsigned int) * 8) - 1;
+	char bin[(sizeof(unsigned int) * 8)];
 	unsigned int mask = 1;
 
 	for (i = 0; i <= bit; i++)
@@ -25,7 +26,7 @@ int handleBin(workingData *wd)
 		mask <<= 1;
 	}
 
-	bin[(sizeof(long int) * 8)] = '\0';
+	bin[(sizeof(unsigned int) * 8)] = '\0';
 
 	i = 0;
 	while (i <= bit && bin[i] == '0')

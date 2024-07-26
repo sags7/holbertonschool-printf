@@ -72,7 +72,7 @@ Juan Sebastian Aramburo <juansebastianaramburo@gmail.com>
 
 Download all of the .c files from the repo and #include them in your C project.
 
-NOTE: This project does not contain a main() loop, so you'll have to create your own, for example:
+NOTE: This project does not contain a main() loop, so you'll have to create your own and save it as main.c, for example:
 
 ````bash
 #include "main.h"

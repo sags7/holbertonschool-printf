@@ -25,6 +25,7 @@ int handleBin(workingData *wd)
 		mask <<= 1;
 	}
 
+    j = 0;
     i = 0;
     while(bin[i])
     {
@@ -35,5 +36,15 @@ int handleBin(workingData *wd)
 		        wd->outputStr[(*wd->outputPosition)++] = bin[j];
     }
 
+    j = 0;
+    i = 0;
+    while(bin[i])
+    {
+        if (bin[i++] == '0')
+            j++;
+        else
+            for (; j <= bit; j++)
+		        wd->outputStr[(*wd->outputPosition)++] = bin[j];
+    }
 	return (0);
 }
